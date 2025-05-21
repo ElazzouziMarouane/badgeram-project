@@ -11,7 +11,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
-@Setter
+
 public class City {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

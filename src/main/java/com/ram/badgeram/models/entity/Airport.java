@@ -15,7 +15,6 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
-@Setter
 
 
 
@@ -27,7 +26,8 @@ public class Airport {
     private String airportCode;
 
     private String name;
-    private boolean deleted;
+    @Getter
+    private boolean  deleted;
     @ManyToOne
     @JoinColumn(name = "city_id")
     private City city;

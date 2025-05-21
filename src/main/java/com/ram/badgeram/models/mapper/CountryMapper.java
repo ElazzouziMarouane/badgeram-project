@@ -1,4 +1,4 @@
-package com.ram.badgeram.models.service;
+package com.ram.badgeram.models.mapper;
 
 import com.ram.badgeram.models.dto.CountryDTO;
 import com.ram.badgeram.models.entity.Country;

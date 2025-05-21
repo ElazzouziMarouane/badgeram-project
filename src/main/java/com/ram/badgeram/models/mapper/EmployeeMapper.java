@@ -1,4 +1,4 @@
-package com.ram.badgeram.models.service;
+package com.ram.badgeram.models.mapper;
 
 import com.ram.badgeram.models.dto.EmployeeDTO;
 import com.ram.badgeram.models.entity.Employee;
@@ -12,7 +12,6 @@ import java.util.stream.Collectors;
 public interface EmployeeMapper {
     EmployeeDTO toDTO(Employee employee);
     Employee toEntity(EmployeeDTO employeeDTO);
-
     @Named("NotDeletedEmployees")
     default List<EmployeeDTO> toDtoListNotDeleted(List<Employee> employees) {
         if (employees == null) return null;

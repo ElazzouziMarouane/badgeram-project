@@ -1,4 +1,4 @@
-package com.ram.badgeram.models.service;
+package com.ram.badgeram.models.mapper;
 
 import com.ram.badgeram.models.dto.*;
 import com.ram.badgeram.models.entity.*;
@@ -12,7 +12,7 @@ public interface AirportMapper {
     AirportDTO toDTO(Airport airport);
     Airport toEntity(AirportDTO airportDTO);
 
-    @Named("NotDeletedAerports")
+    @Named("NotDeletedAirports")
     default List<AirportDTO> toDtoListNotDeleted(List<Airport> airports) {
         if (airports == null) return null;
         return airports.stream()

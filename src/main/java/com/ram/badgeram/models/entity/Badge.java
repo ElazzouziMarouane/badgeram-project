@@ -10,7 +10,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
-@Setter
+
 
 public class Badge {
     @Id
@@ -21,7 +21,10 @@ public class Badge {
     @JoinColumn(name = "employee_id")
     private Employee employee;
 
+    @ManyToOne
+    @JoinColumn(name = "company_id")
     private Company company;
+
     private boolean deleted;
     private LocalDateTime startDate;
     private LocalDateTime endDate;

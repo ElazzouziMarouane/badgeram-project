@@ -1,4 +1,4 @@
-package com.ram.badgeram.models.service;
+package com.ram.badgeram.models.mapper;
 
 import com.ram.badgeram.models.dto.NotificationDTO;
 import com.ram.badgeram.models.entity.Notification;
@@ -13,7 +13,7 @@ public interface NotificationMapper {
     NotificationDTO toDTO(Notification notification);
     Notification toEntity(NotificationDTO notificationDTO);
 
-    @Named("NotDeleted")
+    @Named("NotDeletedNotifications")
     default List<NotificationDTO> toDtoListNotDeleted(List<Notification> notifications) {
         if (notifications == null) return null;
         return notifications.stream()

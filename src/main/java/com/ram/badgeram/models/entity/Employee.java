@@ -13,7 +13,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
-@Setter
+
 
 public class Employee {
     @Id
@@ -23,7 +23,10 @@ public class Employee {
     private String employeeNumber;
     private String lastName;
     private String firstName;
+
+    @Getter
     private boolean deleted;
+
     @Enumerated(EnumType.STRING)
     private Role role;
 

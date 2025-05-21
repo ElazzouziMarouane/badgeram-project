@@ -3,6 +3,7 @@ package com.ram.badgeram.models.dto;
 import com.ram.badgeram.models.enums.Role;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import java.util.List;
@@ -10,6 +11,8 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Getter
+
 public class EmployeeDTO {
     private Long id;
     private String employeeNumber;

@@ -1,9 +1,10 @@
-package com.ram.badgeram.models.service;
+package com.ram.badgeram.models.mapper;
 
 import com.ram.badgeram.models.dto.CompanyDTO;
 import com.ram.badgeram.models.entity.Company;
 import com.ram.badgeram.models.entity.Employee;
 import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
 import org.mapstruct.Named;
 
 import java.util.List;
@@ -13,6 +14,9 @@ import java.util.stream.Collectors;
 public interface CompanyMapper {
     CompanyDTO toDTO(Company company);
     Company toEntity(CompanyDTO companyDTO);
+
+
+    @Mapping(source = "employees", target = "employeeCount", qualifiedByName = "countActiveEmployees")
 
     @Named("countActiveEmployees")
     default int countActiveEmployees(List<Employee> employees) {
@@ -32,3 +36,5 @@ public interface CompanyMapper {
                 .collect(Collectors.toList());
     }
 }
+
+
