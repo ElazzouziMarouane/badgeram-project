@@ -11,11 +11,10 @@ import java.util.List;
 @AllArgsConstructor
 @Getter
 
-public class CompanyDTO {
+public class CompanyTempDTO {
     private Long id;
     private String name;
     private String company_code;
 
-    private List<EmployeeDTO> employees;
 }
 

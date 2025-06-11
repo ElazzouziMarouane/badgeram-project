@@ -1,14 +1,11 @@
 package com.ram.badgeram.models.dto;
 
 import lombok.*;
-import java.util.List;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class CityDTO {
+public class CountryTempDTO {
     private Long id;
     private String name;
-    private List<AirportDTO> airports;
-    private CountryTempDTO country;
 }

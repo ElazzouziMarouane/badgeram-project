@@ -1,5 +1,6 @@
 package com.ram.badgeram.controllers;
 import com.ram.badgeram.models.dto.CountryDTO;
+import com.ram.badgeram.models.entity.Country;
 import com.ram.badgeram.services.CountryService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;

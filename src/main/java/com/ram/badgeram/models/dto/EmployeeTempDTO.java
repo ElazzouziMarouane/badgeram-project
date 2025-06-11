@@ -13,13 +13,12 @@ import java.util.List;
 @AllArgsConstructor
 @Getter
 
-public class EmployeeDTO {
+public class EmployeeTempDTO {
     private Long id;
     private String employeeNumber;
     private String lastName;
     private String firstName;
     private Role role;
     private CompanyTempDTO company;
-    private List<BadgeDTO> badges;
 }
 

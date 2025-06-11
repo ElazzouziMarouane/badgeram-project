@@ -1,19 +1,13 @@
 package com.ram.badgeram.models.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Getter
-
 public class AirportDTO {
     private Long id;
-    private String airportCode;
     private String name;
-    private CityDTO city;
+    private String airportCode;
+    private CityTempDTO city;
 }
-

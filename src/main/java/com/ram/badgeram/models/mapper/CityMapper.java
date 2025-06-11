@@ -1,24 +1,23 @@
 package com.ram.badgeram.models.mapper;
 
+
 import com.ram.badgeram.models.dto.CityDTO;
+import com.ram.badgeram.models.dto.CityTempDTO;
 import com.ram.badgeram.models.entity.City;
-import org.mapstruct.Mapper;
-import org.mapstruct.Named;
+import org.mapstruct.*;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
-@Mapper(componentModel = "spring", uses = {CountryMapper.class, AirportMapper.class})
+@Mapper(componentModel = "spring", uses = AirportMapper.class)
 public interface CityMapper {
-    CityDTO toDTO(City city);
-    City toEntity(CityDTO cityDTO);
+    @Mapping(target = "airports", source = "airports")
+    @Mapping(target = "country", source = "country")
+    CityDTO toDTO(City entity);
+    City toEntity(CityDTO dto);
 
-    @Named("NotDeletedCities")
-    default List<CityDTO> toDtoListNotDeleted(List<City> cities) {
-        if (cities == null) return null;
-        return cities.stream()
-                .filter(c -> !c.isDeleted())
-                .map(this::toDTO)
-                .collect(Collectors.toList());
-    }
+    @Mapping(target = "country", source = "country")
+    CityTempDTO toTempDTO(City city);
+
+
 }

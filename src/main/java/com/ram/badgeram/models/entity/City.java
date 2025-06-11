@@ -1,6 +1,7 @@
 package com.ram.badgeram.models.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -22,7 +23,6 @@ public class City {
     @ManyToOne
     @JoinColumn(name = "country_id")
     private Country country;
-
     @OneToMany(mappedBy = "city")
     private List<Airport> airports;
 }

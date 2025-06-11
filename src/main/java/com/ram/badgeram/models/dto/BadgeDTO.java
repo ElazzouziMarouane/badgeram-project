@@ -14,8 +14,8 @@ import java.time.LocalDateTime;
 
 public class BadgeDTO {
     private Long id;
-    private EmployeeDTO employee;
-    private CompanyDTO company;
+    private EmployeeTempDTO employee;
+    private CompanyTempDTO company;
     private LocalDateTime startDate;
     private LocalDateTime endDate;
 }

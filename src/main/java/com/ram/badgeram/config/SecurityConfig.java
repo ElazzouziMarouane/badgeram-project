@@ -12,17 +12,17 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 public class SecurityConfig {
 
     @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
+                .csrf(csrf -> csrf.disable()) // désactive CSRF (pour les appels API REST)
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/public/**").permitAll() // autorise les endpoints publics
-                        .anyRequest().authenticated() // les autres doivent être authentifiés
+                        .requestMatchers("/public/**").permitAll() // autorisé sans token
+                        .anyRequest().authenticated()              // tout le reste = sécurisé
                 )
-                .oauth2ResourceServer(oauth2 -> oauth2
-                        .jwt(Customizer.withDefaults()) // JWT Keycloak
-                );
+                .oauth2ResourceServer(oauth2 -> oauth2.jwt(Customizer.withDefaults()))
+                .httpBasic(httpBasic -> httpBasic.disable())   // désactive auth basique
+                .formLogin(form -> form.disable());            // désactive login HTML
 
         return http.build();
     }
 }
-

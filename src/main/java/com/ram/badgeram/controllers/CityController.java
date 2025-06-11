@@ -1,11 +1,15 @@
 package com.ram.badgeram.controllers;
 import com.ram.badgeram.models.dto.CityDTO;
+import com.ram.badgeram.models.entity.Country;
 import com.ram.badgeram.services.CityService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.Optional;
+
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/cities")
